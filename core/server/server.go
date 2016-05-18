@@ -46,11 +46,11 @@ func Start(port int) {
 	streams := e.Group("/streams")
 
 
-	e.Static("/", "client/lemon/dist")
+	e.Static("/", "client/dist")
 	router.PerformRoutes(e, api, streams, context.GetContext())
 
 
-	e.Run(standard.New(":3000"))
+	e.Run(standard.New(":9000"))
 
 }
 

@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="content">
+    <div class="header">
+
+      <span>GoUploading</span>
+    </div>
+    <div class="form-container">
+      <div class="form">
+        <form id="fileForm" {{lemon-upload url="/upload"}}>
+          {{input valueBinding='file' class="inputfile" type='file' id='file-field' }}
+        </form>
+        <span class="message">
+          Drop file here
+        </span>
+      </div>
+    </div>
+
+
+    <div class="link">
+      {{#if isUpload}}
+        <div class="linkmessage">
+
+          <a href="{{filesrc}}" id="linktext">{{filesrc}}</a>
+        </div>
+      {{/if}}
+    </div>
+
+  </div>
+
+
+</div>
+<div class="preview">
+  {{#if isVideo}}
+    <video class="video" id="preview-video" src="{{videosrc}}" width="320" height="240" autoplay loop></video>
+  {{/if}}
+
+
+  <img class="image" src="{{model.imageUrl}}" id="preview-image" class="small-image" />
+</div>
