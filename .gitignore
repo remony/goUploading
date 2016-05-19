@@ -1,3 +1,6 @@
 .idea
 
 public/images/*
+
+client/bower_components/*
+client/node_modules/*

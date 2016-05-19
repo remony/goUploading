@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>GoUploading</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/base.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <ng-view></ng-view>
+    </div>
+
+  </body>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="app.js"></script>
+  <script src="views/dashboard/dashboard.js"></script>
+  <script src="components/uploader/uploader.js"></script>
+  <script src="components/videohandler/videohandler.js"></script>
+  <script src="components/progressbar/progressbar.js"></script>
+  <script src="components/notification/notification.js"></script>
+</html>

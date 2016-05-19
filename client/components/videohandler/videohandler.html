@@ -1,0 +1,30 @@
+'use strict';
+
+angular.module('app.component.uploader', [])
+    .directive('uploader', function($timeout) {
+        return {
+            // restrict: 'E',
+            scope: {
+                uploader: '='
+            },
+            templateUrl: 'components/uploader/uploader.html',
+            link: function(scope, element, attrs) {
+                function createObjectURL(object) {
+                    return (window.URL) ? window.URL.createObjectURL(object) : window.webkitURL.createObjectURL(object);
+                }
+                element.bind('change', function(change) {
+                    console.log(change.target.files);
+                    $timeout(function() {
+                        scope.uploader = {
+                          'name': change.target.files[0].name,
+                          'type': change.target.files[0].type,
+                          'filesize': change.target.files[0].size,
+                          'image': createObjectURL(change.target.files[0])
+                        }
+                    })
+
+
+                })
+            }
+        };
+    });

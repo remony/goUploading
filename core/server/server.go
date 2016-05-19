@@ -46,7 +46,7 @@ func Start(port int) {
 	streams := e.Group("/streams")
 
 
-	e.Static("/", "client/dist")
+	e.Static("/", "client")
 	router.PerformRoutes(e, api, streams, context.GetContext())
 
 

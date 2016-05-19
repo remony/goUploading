@@ -1,45 +1,21 @@
 {
-  "name": "lemon",
-  "version": "0.0.0",
-  "description": "Small description for lemon goes here",
-  "private": true,
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "build": "ember build",
-    "start": "ember server",
-    "test": "ember test"
-  },
-  "repository": "",
-  "engines": {
-    "node": ">= 0.10.0"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build-css": "node-sass --include-path scss ./assets/scss/base.scss ./assets/css/base.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "broccoli-asset-rev": "^2.4.2",
-    "ember-ajax": "0.7.1",
-    "ember-cli": "2.5.0",
-    "ember-cli-app-version": "^1.0.0",
-    "ember-cli-babel": "^5.1.6",
-    "ember-cli-cors": "0.0.2",
-    "ember-cli-dependency-checker": "^1.2.0",
-    "ember-cli-form-data": "0.1.1",
-    "ember-cli-htmlbars": "^1.0.3",
-    "ember-cli-htmlbars-inline-precompile": "^0.3.1",
-    "ember-cli-inject-live-reload": "^1.4.0",
-    "ember-cli-jshint": "^1.0.0",
-    "ember-cli-qunit": "^1.4.0",
-    "ember-cli-release": "0.2.8",
-    "ember-cli-sri": "^2.1.0",
-    "ember-cli-uglify": "^1.2.0",
-    "ember-data": "^2.5.0",
-    "ember-export-application-global": "^1.0.5",
-    "ember-load-initializers": "^0.5.1",
-    "ember-resolver": "^2.0.3",
-    "ember-uploader": "1.1.0",
-    "loader.js": "^4.0.1"
+  "license": "ISC",
+  "dependencies": {
+    "finalhandler": "^0.4.1",
+    "livereload": "^0.4.1",
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "serve-static": "^1.10.2"
   }
 }

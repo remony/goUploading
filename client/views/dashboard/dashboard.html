@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="content">
+      <notification data="{{notificationdata}}"></notification>
+        <div class="progress-area" ng-if="uploadStatus.percent > 0 && uploadStatus.percent < 100">
+            <progressbar class="fileuploadprogress" progress={{uploadStatus}}></progressbar>
+        </div>
+        <div class="header">
+            <span>GoUploading</span>
+        </div>
+        <div class="form-container">
+            <div class="form">
+                <form ng-submit="uploadFile(file)">
+                    <input class="fill" type="file" ng-model="file" uploader="file">
+                    <input type="submit">
+                </form>
+            </div>
+            <div class="message">
+              <span>Drop File Here</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="preview" ng-style="previewstyles">
+    <!-- <img ng-src="{{fileinfo.image}}" ng-if="fileinfo.isImage" /> -->
+    <video videosrc="{{ fileinfo.image }}" ng-if="fileinfo.isVideo" autoplay loop videohandler></video>
+
+</div>
+
+
+
+
+<!-- <video ng-model="videoinfo"></video> -->
