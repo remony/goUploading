@@ -14,6 +14,7 @@ angular.module('app.component.progressbar', [])
                   if (newProgress) {
                     $timeout(function () {
                       scope.status = JSON.parse(attrs.progress);
+                      scope.status.percent = Math.floor(scope.status.percent)
                       scope.progressStyles.width = JSON.parse(attrs.progress).percent + '%';
                     });
 

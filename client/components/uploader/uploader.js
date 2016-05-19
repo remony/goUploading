@@ -13,7 +13,7 @@ angular.module('app.component.uploader', [])
                     return (window.URL) ? window.URL.createObjectURL(object) : window.webkitURL.createObjectURL(object);
                 }
                 element.bind('change', function(change) {
-                    console.log(change.target.files[0]);
+                    // console.log(change.target.files[0]);
                     $timeout(function() {
                       scope.uploader = change.target.files[0];
                       scope.uploader.image = createObjectURL(change.target.files[0])

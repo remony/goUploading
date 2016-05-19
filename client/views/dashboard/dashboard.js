@@ -32,7 +32,7 @@ angular.module('app.dashboard', ['ngRoute'])
             'percent': (event.loaded / event.total * 100)
           }
         })
-        console.log($scope.uploadStatus)
+        // console.log($scope.uploadStatus)
           // ...
       } else {
         console.log('unable')
@@ -50,15 +50,21 @@ angular.module('app.dashboard', ['ngRoute'])
     }
 
     function transferFailed(event) {
-      console.log('failed')
+      // console.log('failed')
     }
 
     function transferCanceled(event) {
-      console.log('canceled')
+      // console.log('canceled')
     }
 
     function transferStart(event) {
-      console.log('started')
+      // console.log('started')
+      $timeout(function() {
+        $scope.notificationdata = {
+          "link": undefined,
+          "type": "none"
+        };
+      })
     }
 
     function upload(file) {
@@ -80,7 +86,7 @@ angular.module('app.dashboard', ['ngRoute'])
 
         xhr.addEventListener("readystatechange", function() {
           if (this.readyState === 4) {
-            console.log(this.responseText);
+            // console.log(this.responseText);
           }
         });
 
@@ -93,7 +99,7 @@ angular.module('app.dashboard', ['ngRoute'])
     }
 
     $scope.$watch('file', function(newfile) {
-      console.log(newfile)
+      // console.log(newfile)
       if (newfile) {
         $scope.fileinfo = newfile;
         $scope.previewstyles = {
@@ -104,7 +110,7 @@ angular.module('app.dashboard', ['ngRoute'])
             'background-size': 'cover'
           }
           //  detect images
-        console.log(newfile.type)
+        // console.log(newfile.type)
 
 
         if ($scope.fileinfo.type === 'image/jpeg' || $scope.fileinfo.type === 'image/gif' || $scope.fileinfo.type === 'image/png' || $scope.fileinfo.type === 'image/webp') {
@@ -132,8 +138,8 @@ angular.module('app.dashboard', ['ngRoute'])
     })
 
     function changePreview(file) {
-      console.log('File change detected')
-      console.log(file)
+      // console.log('File change detected')
+      // console.log(file)
     }
 
 

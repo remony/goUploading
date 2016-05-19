@@ -14,18 +14,24 @@ angular.module('app.component.notification', [])
               scope.progressStyles = {};
                 scope.$watch('data', function(newProgress) {
                   if (newProgress) {
-                    element.addClass('hide');
-                    element.removeClass('show');
-                    $timeout(function () {
-                      element.addClass('show');
-                      element.removeClass('hide');
-                      scope.link = JSON.parse(attrs.data).link;
-                    }, 10);
+                    console.log(JSON.parse(attrs.data).type)
+                    if (JSON.parse(attrs.data).type === 'success') {
+                      $timeout(function() {
 
-                    $timeout(function() {
-
-                    }, 10000)
-
+                        element.addClass('hide');
+                        element.removeClass('show');
+                      })
+                      $timeout(function () {
+                        element.addClass('show');
+                        element.removeClass('hide');
+                        scope.link = JSON.parse(attrs.data).link;
+                      }, 10);
+                    } else {
+                      $timeout(function() {
+                      element.addClass('hide');
+                      element.removeClass('show');
+                    })
+                    }
                   }
                 })
             }
